@@ -8,7 +8,8 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
-  <script type="module" crossorigin src="./assets/index-DuJOGQ0d.js"></script>
+  <script type="module" src="https://portfoliotech.github.io/investify/cdn/js/settings.js"></script>
+  <script type="module" crossorigin src="./assets/index-BGAhrzEf.js"></script>
   <link rel="stylesheet" crossorigin href="./assets/index-UQlTVIpj.css">
 </head>
 
@@ -19,14 +20,26 @@
   </div>
   <div id="footer" class="footer">
     <div id="settings" class="footer-settings">
-      <img alt="settings" src="./assets/settings-DhpKgZGb.png" class="footer-settings-icon" width="14" height="14" onclick="gotoSettings();" />
+      <img alt="settings" src="https://portfoliotech.github.io/investify/cdn/img/settings.png" class="footer-settings-icon" width="14" height="14" onclick="gotoSettings();" />
     </div>
     <div id="saved"></div>
     <div id="version"></div>
   </div>
   <script>
+    version_data - get_version_data();
+    if (!is_dev_env(document.domain)) {
+      document.getElementById('version').innerText = get_version_info(version_data);
+      document.getElementById('saved').innerText = '';
+    }
+    else {
+      document.getElementById('footer').style.borderTopColor = 'red';
+      document.getElementById('version').innerText = format_version_and_build_info(version_data);
+      document.getElementById('saved').innerText = format_saved_info(version_data);
+    }
+  </script>
+  <script>
     function gotoSettings() {
-      window.location.href = window.SettingsUrl;
+      window.location.href = "https://portfoliotech.github.io/investify/cdn/settings.html";
     }</script>
 </body>
 
