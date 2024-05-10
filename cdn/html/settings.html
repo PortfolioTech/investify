@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Investify Settings</title>
+    <script type="module">
+        import * as module_environment from "/cdn/js/environment.js";
+        window.environment = module_environment;
+        window.onload = function () {
+            document.getElementById('dev_url').value = window.environment.get_dev_url();
+        }
+    </script>
+    <style>
+        * {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h2>Dev Environment</h2>
+        <div>
+            <label for="dev_url"><b>URL</b></label>
+            <input id="dev_url" type="text" size="60">
+        </div>
+        <div>
+            <button onclick="alert(window.environment.set_dev_url(document.getElementById('dev_url').value))">Set</button>
+            <button onclick="alert(window.environment.get_dev_url())">Alert</button>
+            <button onclick="alert(window.environment.delete_dev_url())">Remove</button>
+        </div>
+    </div>
+</body>
+
+</html>
