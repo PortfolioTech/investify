@@ -6,7 +6,6 @@ export const settings_page_url = "https://portfoliotech.github.io/investify/stat
 
 export function set_dev_url(url) {
     localStorage.setItem(dev_url, url);
-    return "dev url set: " + url;
 }
 
 export function get_dev_url() {
@@ -15,7 +14,6 @@ export function get_dev_url() {
 
 export function delete_dev_url() {
     localStorage.removeItem(dev_url);
-    return "dev url deleted";
 }
 
 export function is_dev_env(domain) {
