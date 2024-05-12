@@ -10,7 +10,11 @@ export function set_dev_url(url) {
 }
 
 export function get_dev_url() {
+    console.log('get_dev_url', 'dev_url');
+    console.log('getItem', localStorage.getItem(dev_url));
+
     return localStorage.getItem(dev_url);
+
 }
 
 export function delete_dev_url() {
