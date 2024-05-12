@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Investify Settings</title>
     <script type="module">
-        import * as module_environment from "https://portfoliotech.github.io/investify/cdn/js/environment.js";
-        window.environment = module_environment;
+        import * as settings_es6 from "https://portfoliotech.github.io/investify/static/js/settings.js";
+        window.settings_es6 = settings_es6;
         window.onload = function () {
-            document.getElementById('dev_url').value = window.environment.get_dev_url();
+            document.getElementById('dev_url').value = settings_es6.get_dev_url();
         }
     </script>
     <style>
@@ -27,9 +27,9 @@
             <input id="dev_url" type="text" size="60">
         </div>
         <div>
-            <button onclick="alert(window.environment.set_dev_url(document.getElementById('dev_url').value))">Set</button>
-            <button onclick="alert(window.environment.get_dev_url())">Alert</button>
-            <button onclick="alert(window.environment.delete_dev_url())">Remove</button>
+            <button onclick="alert(window.settings_es6.set_dev_url(document.getElementById('dev_url').value))">Set</button>
+            <button onclick="alert(window.settings_es6.get_dev_url())">Alert</button>
+            <button onclick="alert(window.settings_es6.delete_dev_url())">Remove</button>
         </div>
     </div>
 </body>
