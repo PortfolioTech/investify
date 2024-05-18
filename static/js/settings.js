@@ -16,8 +16,12 @@ export function delete_dev_url() {
     localStorage.removeItem(dev_url);
 }
 
-export function is_dev_env(domain) {
+export function dev_mode(domain) {
     return !domain.includes('github') || get_dev_url();
+}
+
+export function prod_mode(domain) {
+    return !dev_mode(domain);
 }
 
 export function dev_env_enabled(domain) {
