@@ -9,7 +9,8 @@
         import * as settings_es6 from "https://portfoliotech.github.io/investify/static/js/settings.js";
         window.settings_es6 = settings_es6;
         window.onload = function () {
-            document.getElementById('dev_url').value = settings_es6.get_dev_url();
+            document.getElementById('version_url').value = settings_es6.get_url(settings_es6.version_url);
+            document.getElementById('dev_url').value = settings_es6.get_url(settings_es6.dev_url);
         }
     </script>
     <style>
@@ -21,15 +22,23 @@
 
 <body>
     <div>
+        <h2>Version</h2>
+        <div>
+            <label for="version_url"><b>URL</b></label>
+            <input id="version_url" type="text" size="60">
+        </div>
+        <div>
+            <button onclick="alert(window.settings_es6.set_url(settings_es6.version_url, document.getElementById('version_url').value))">Set</button>
+            <button onclick="alert(window.settings_es6.delete_url(settings_es6.version_url))">Remove</button>
+        </div>
         <h2>Dev Environment</h2>
         <div>
             <label for="dev_url"><b>URL</b></label>
             <input id="dev_url" type="text" size="60">
         </div>
         <div>
-            <button onclick="alert(window.settings_es6.set_dev_url(document.getElementById('dev_url').value))">Set</button>
-            <button onclick="alert(window.settings_es6.get_dev_url())">Alert</button>
-            <button onclick="alert(window.settings_es6.delete_dev_url())">Remove</button>
+            <button onclick="alert(window.settings_es6.set_url(settings_es6.dev_url, document.getElementById('dev_url').value))">Set</button>
+            <button onclick="alert(window.settings_es6.delete_url(settings_es6.dev_url))">Remove</button>
         </div>
     </div>
 </body>
