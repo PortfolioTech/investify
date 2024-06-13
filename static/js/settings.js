@@ -9,7 +9,7 @@ export function set_url(key_url, url) {
 }
 
 export function get_url(key_url) {
-    return url = localStorage.getItem(key_url);
+    return localStorage.getItem(key_url);
 }
 
 export function delete_url(key_url) {
