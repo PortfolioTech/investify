@@ -23,7 +23,7 @@ export function dev_mode() {
 }
 
 export function prod_mode() {
-    return import.meta.env.MODE === 'production';
+    return import.meta.env.MODE === 'production' && !get_url(dev_url);
 }
 
 export function redirect_dev() {
