@@ -14,8 +14,7 @@ export function get_url(key_url) {
 }
 
 export function delete_url(key_url) {
-    let url = localStorage.removeItem(key_url);
-    return
+    localStorage.removeItem(key_url);
 }
 
 export function dev_mode() {
