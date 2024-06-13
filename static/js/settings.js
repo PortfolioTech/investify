@@ -6,11 +6,17 @@ export const settings_page_url = "https://portfoliotech.github.io/investify/stat
 
 export function set_url(key_url, url) {
     localStorage.setItem(key_url, url);
+    return url;
 }
 
 export function get_url(key_url) {
     let url = localStorage.getItem(key_url);
     return url ? url : prod_url;
+}
+
+export function delete_url(key_url) {
+    let url = localStorage.removeItem(key_url);
+    return
 }
 
 export function dev_mode() {
