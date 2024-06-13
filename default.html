@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Investify</title>
+  <script>
+    redirect();
+    function redirect() {
+      const version_url = "VERSION110620240857";
+      const default_url = "https://portfoliotech.github.io/investify/v1.3";
+      let url = localStorage.getItem(version_url);
+      window.location.href = url ? url : default_url;
+    }
+  </script>
+</head>
+
+<body>
+</body>
+
+</html>
