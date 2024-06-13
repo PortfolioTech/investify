@@ -6,17 +6,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Investify</title>
   <script>
-    redirect();
-    function redirect() {
+    function get_url() {
       const version_url = "VERSION110620240857";
       const default_url = "https://portfoliotech.github.io/investify/v1.3";
       let url = localStorage.getItem(version_url);
-      window.location.href = url ? url : default_url;
+      return url ? url : default_url;
+    }
+
+    function load_iframe() {
+      let iframe = document.getElementById('my_iframe');
+      iframe.src = get_url();
     }
   </script>
 </head>
 
-<body>
+<body onload="load_iframe()">
+  <iframe id="my_iframe" title="investify_frame" width="100%" height="100%"></iframe>
 </body>
 
 </html>
