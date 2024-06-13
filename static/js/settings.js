@@ -13,14 +13,10 @@ export function get_url(key_url) {
     return url ? url : prod_url;
 }
 
-export function dev_mode(domain) {
-    return !domain.includes('github') || get_dev_url();
+export function dev_mode() {
+    return import.meta.env.MODE === 'development';
 }
 
-export function prod_mode(domain) {
-    return !dev_mode(domain);
-}
-
-export function dev_env_enabled(domain) {
-    return domain.includes('github') && get_dev_url();
+export function prod_mode() {
+    return import.meta.env.MODE === 'production';
 }
