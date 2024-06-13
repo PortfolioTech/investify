@@ -9,7 +9,7 @@
         import * as settings_es6 from "https://portfoliotech.github.io/investify/static/js/settings.js";
         window.settings_es6 = settings_es6;
         window.onload = function () {
-            document.getElementById('version_url').value = settings_es6.get_url(settings_es6.version_url);
+            document.getElementById('dev_url').value = settings_es6.get_url(settings_es6.dev_url);
         }
     </script>
     <style>
@@ -21,27 +21,27 @@
 
 <body>
     <div>
-        <h2>Version</h2>
+        <h2>Dev Environment</h2>
         <div>
-            <label for="version_url"><b>URL</b></label>
-            <input id="version_url" type="text" size="60">
+            <label for="dev_url"><b>URL</b></label>
+            <input id="dev_url" type="text" size="60">
         </div>
         <div>
-            <button onclick="set_version_url()">Set</button>
-            <button onclick="delete_version_url()">Remove</button>
+            <button onclick="set_dev_url()">Set</button>
+            <button onclick="delete_dev_url()">Remove</button>
         </div>
+        <script>
+            function set_dev_url() {
+                window.settings_es6.set_url(settings_es6.dev_url, document.getElementById('dev_url').value);
+                alert('dev url set: ' + settings_es6.get_url(settings_es6.dev_url));
+            }
+            function delete_dev_url() {
+                window.settings_es6.delete_url(settings_es6.dev_url);
+                document.getElementById('dev_url').value = "";
+                alert('dev url removed.');
+            }
+        </script>
     </div>
-    <script>
-        function set_version_url() {
-            window.settings_es6.set_url(settings_es6.version_url, document.getElementById('version_url').value);
-            alert('version url set: ' + settings_es6.get_url(settings_es6.version_url));
-        }
-        function delete_version_url() {
-            window.settings_es6.delete_url(settings_es6.version_url);
-            document.getElementById('version_url').value = "";
-            alert('version url removed.');
-        }
-    </script>
 </body>
 
 </html>

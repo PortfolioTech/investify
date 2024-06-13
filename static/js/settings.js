@@ -1,4 +1,3 @@
-export const version_url = "VERSION110620240857";
 export const dev_url = "DEV31620240503";
 export const prod_url = "../vues/investify.vue";
 export const settings_page_url = "https://portfoliotech.github.io/investify/static/html/settings.html";
@@ -25,4 +24,8 @@ export function dev_mode() {
 
 export function prod_mode() {
     return import.meta.env.MODE === 'production';
+}
+
+export function redirect_dev() {
+    return document.domain.includes('github') && get_url(dev_url);
 }
