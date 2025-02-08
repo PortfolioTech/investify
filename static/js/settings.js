@@ -1,5 +1,5 @@
 export const dev_url = "DEV31620240503";
-export const prod_url = "../vues/investify.vue";
+export const prod_url = "../vue/investify.vue";
 export const settings_page_url = "https://portfoliotech.github.io/investify/static/html/settings.html";
 
 
